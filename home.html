@@ -1,0 +1,43 @@
+<html>
+    <head>
+
+    </head>
+    <style>
+        .container{
+            width:50%;
+            margin-left:25%;
+            margin-top: 5%;
+            border:1px solid rgb(41, 41, 44);
+            padding:1cm;
+        }
+        .container input{
+            width:100%;
+            margin:0.3cm 0;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <h1>Age Calculator</h1>
+            <label for="date"> Enter your date of birth: </label>
+            <input type="date" name="date" id="date">
+            <button id="calculate" >Calculate Age</button><br><br>
+            <p id="item" >  </p>
+        </div>
+        <script>
+            var calculate = document.getElementById('calculate');
+            var item = document.getElementById('item');
+            calculate.addEventListener('click',function(){
+                var date = new Date(document.getElementById('date').value).getFullYear();
+                var today = new Date().getFullYear();
+                if (date > 0 ){
+                var age = Number(today) - Number(date);
+                item.innerHTML = `your age is `+age;
+                }
+                else{
+                    alert('Your have entered Unavailable values');
+                }
+            })
+            
+        </script>
+    </body>
+</html>
